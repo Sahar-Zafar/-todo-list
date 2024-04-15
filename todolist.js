@@ -1,14 +1,9 @@
 #! /usr/bin/env node
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const inquirer_1 = __importDefault(require("inquirer"));
+import inquirer from "inquirer";
 let toDoList = [];
 let whileCondition = true;
 while (whileCondition === true) {
-    let option = await inquirer_1.default.prompt([
+    let option = await inquirer.prompt([
         {
             type: "list",
             name: "user_option",
@@ -17,7 +12,7 @@ while (whileCondition === true) {
         },
     ]);
     if (option.user_option === "Add") {
-        let userAns = await inquirer_1.default.prompt([
+        let userAns = await inquirer.prompt([
             {
                 type: "input",
                 name: "user_answer",
@@ -33,7 +28,7 @@ while (whileCondition === true) {
         }
     }
     else if (option.user_option === "Remove") {
-        let removeTask = await inquirer_1.default.prompt([
+        let removeTask = await inquirer.prompt([
             {
                 type: "list",
                 name: "remove_item",
@@ -48,7 +43,7 @@ while (whileCondition === true) {
             console.log("Your final list is:", toDoList);
         }
     }
-    let user_Ans = await inquirer_1.default.prompt([{
+    let user_Ans = await inquirer.prompt([{
             type: "confirm",
             name: "selection",
             message: "Do you want to continue?",
