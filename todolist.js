@@ -25,7 +25,7 @@ while (whileCondition === true) {
         }
         else {
             console.log("Please add something in the task list:");
-        }
+        };
     }
     else if (option.user_option === "Remove") {
         let removeTask = await inquirer.prompt([
@@ -41,6 +41,6 @@ while (whileCondition === true) {
             toDoList.splice(removeItem, 1);
             console.log("You removed : ", removeTask.remove_item);
             console.log("Your tasks/items are:", toDoList);
-        }
-    }
-}
+        };
+    };
+};
